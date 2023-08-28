@@ -1,0 +1,261 @@
+@import url("fonts.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Circular';
+}
+body {
+    height: 2000px;
+}
+
+:root {
+    --pirimarycolor: #56597A;
+    --secondarycolor: #F087B1;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.header {
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1320px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+
+.nav__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 129px;
+}
+
+.logo {
+    color: var(--secondarycolor);
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0.6px;
+    transition: 0.3s;
+    padding: 58px 0;
+    z-index: 1;
+}
+
+.logo:hover {
+    color: var(--pirimarycolor);
+}
+
+.nav__list {
+    display: flex;
+    background: none;
+    gap: 73px;
+    z-index: 1;
+}
+
+.nav__link {
+    color: #AAAAAB;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    transition: 0.3s;
+}
+
+.nav__link:hover,
+.nav__link.active {
+    color: var(--pirimarycolor);
+}
+
+.nav__menu {
+    width: 20px;
+    height: 20px;
+    display: none;
+}
+
+
+
+.nav__menu-span {
+    height: 1px;
+    background: var(--pirimarycolor);
+    position: relative;
+    top: 50%;
+    left: 0;
+    display: block;
+}
+
+.nav__menu-span.active {
+    display: none;
+}
+
+.nav__menu-span::before,
+.nav__menu-span::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    display: block;
+    background: var(--pirimarycolor);
+}
+
+
+
+.nav__menu-span::before {
+    bottom: 8px;
+    left: 0;
+}
+
+.nav__menu-span::after {
+    top: 8px;
+    left: 0;
+}
+.nav__menu-span2 {
+    height: 1px;
+    background: #fff;
+    position: relative;
+    top: 50%;
+    left: 0;
+    display: none;
+}
+.nav__menu-span2.active {
+    display: block;
+}
+
+.nav__menu-span2::before,
+.nav__menu-span2::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    display: block;
+    background: #fff;
+}
+
+
+
+.nav__menu-span2::before {
+    bottom: 8px;
+    left: 0;
+}
+
+.nav__menu-span2::after {
+    top: 8px;
+    left: 0;
+}
+.header__nav-menu {
+    z-index: 1;
+    transition: 0.5s;
+}
+.header__info {
+    margin-bottom: 139px;
+}
+
+.header__info-about img {
+    width: 36px;
+    height: 3px;
+    padding-right: 7px;
+}
+
+.header__info-about {
+    color: var(--secondarycolor);
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 40px;
+    margin-bottom: 29px;
+    position: relative;
+    z-index: 1;
+}
+
+.header__info-title {
+    max-width: 599px;
+    width: 100%;
+    color: var(--pirimarycolor);
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 74px;
+    margin-bottom: 31px;
+    position: relative;
+    z-index: 1;
+}
+
+.header__info-text {
+    color: #919299;
+    max-width: 537px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0.4px;
+    margin-bottom: 42px;
+    position: relative;
+    z-index: 1;
+}
+
+.btn {
+    display: flex;
+    border-radius: 4px;
+    background: var(--secondarycolor);
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+
+.header__info-button {
+    display: flex;
+    align-items: center;
+    color: #FFF;
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 0.4px;
+    padding: 18px 0 18px 22px;
+    position: relative;
+}
+
+.arrow {
+    background: none;
+    padding-left: 19px;
+    padding-right: 37px;
+}
+
+.arrow-span {
+    position: absolute;
+    border-radius: 2px;
+    border: 2.5px solid #FFF;
+    background: rgba(255, 193, 218, 0.28);
+    width: 32px;
+    height: 32px;
+    top: 26%;
+    left: 76%;
+}
+
+.header__img {
+    position: absolute;
+    background: none;
+    top: 33%;
+    left: 50%;
+}
+
+.header__bg {
+    position: absolute;
+    background: none;
+    top: -4%;
+    right: -5%;
+}
