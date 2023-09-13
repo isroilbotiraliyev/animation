@@ -1,3 +1,22 @@
+@media (max-width: 1365px) {
+  
+  .nav__content {
+    margin: 0 50px 129px;
+  }
+  .header__wrapper {
+    margin: 0 50px 139px;
+  }
+  .teamwork__content {
+    margin: 0 50px;
+    overflow: hidden;
+  }
+  .footer__bottom-content {
+    margin: 0 50px;
+  }
+  .teamwork__img {
+    padding-right: 60px;
+  }
+}
 @media (max-width: 992px) {
     .nav__menu {
         display: block;

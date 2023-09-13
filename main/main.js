@@ -1,12 +1,11 @@
-var headerInfoTitle = document.querySelector('.header__info-title');
+    var headerInfoTitle = document.querySelector('.header__info-title');
 
 let txt = headerInfoTitle.innerHTML
 headerInfoTitle.innerHTML = ""
 
-console.log(txt);
-function str(x = 0) {
+    function str(x = 0) {
     headerInfoTitle.innerHTML += txt[x]
-    x++
+    x++     
     if (txt.length > x) {
         setTimeout(() => {
             str(x)
@@ -90,6 +89,7 @@ window.addEventListener("scroll", function () {
     scrollthings()
     scrollteamwork()
     scrollabout() 
+    scrollbrands()
 })
 
 function scrollcards() {
@@ -156,16 +156,18 @@ function scrollabout() {
 }
 
 
+var brands = document.querySelectorAll('.brands__card');
 
 
-btn.forEach(btns => {
+function scrollbrands() {
+    for (let i = 0; i < brands.length; i++) {
+        if (this.scrollY >= brands[i].offsetTop - brands[i].offsetHeight * 10) {
+            const speed = +brands[i].getAttribute("data-speed")
+            brands[i].style.transition = speed + `ms`
+            brands[i].classList.add("active")
+        } else {
+            brands[i].classList.remove("active")
 
-    btns.addEventListener("mousemove", function (e) {
-        const X = e.pageX - this.offsetLeft
-        const Y = e.pageY - this.offsetTop
-
-        this.style.setProperty("--x", `${X}px`)
-        this.style.setProperty("--y", `${Y}px`)
-    })
-
-})
+        }
+    }
+}
