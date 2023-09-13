@@ -3,10 +3,10 @@ var headerInfoTitle = document.querySelector('.header__info-title');
 let txt = headerInfoTitle.innerHTML
 headerInfoTitle.innerHTML = ""
 
+console.log(txt);
 function str(x = 0) {
     headerInfoTitle.innerHTML += txt[x]
     x++
-
     if (txt.length > x) {
         setTimeout(() => {
             str(x)
@@ -22,6 +22,8 @@ var arrow2 = document.querySelector('.arrow2');
 var arrowSpan2 = document.querySelector('.arrow-span2');
 var arrow3 = document.querySelector('.arrow3');
 var arrowSpan3 = document.querySelector('.arrow-span3');
+var arrow4 = document.querySelector('.arrow4');
+var arrowSpan4 = document.querySelector('.arrow-span4');
 
 var x = 0.2
 
@@ -34,6 +36,8 @@ function btnAn() {
         arrowSpan2.style.transform = `scale(${x})`
         arrow3.style.transform = `scale(${x})`
         arrowSpan3.style.transform = `scale(${x})`
+        arrow4.style.transform = `scale(${x})`
+        arrowSpan4.style.transform = `scale(${x})`
 
         setTimeout(() => {
             btnAn()
@@ -48,18 +52,20 @@ function btnAn() {
 btnAn()
 
 var headerImg = document.querySelector('.header__img');
+var subscribeImg = document.querySelector('.subscribe__img');
 
 window.addEventListener("mousemove", function (e) {
     let X = (window.innerWidth - e.pageX) / 25
     let Y = (window.innerHeight - e.pageY) / 25
     headerImg.style.transform = `translate(${X}px, ${Y}px)`
+    subscribeImg.style.transform = `translate(${X}px, ${Y / 4}px)`
 })
 
 var headerMenu = document.querySelector('.nav__menu');
 var headerNavMenu = document.querySelector('.header__nav-menu');
 var navMenuSpan = document.querySelector('.nav__menu-span');
 var navMenuSpan2 = document.querySelector('.nav__menu-span2');
-var btn = document.querySelector('.btn');
+var btn = document.querySelectorAll('.btn');
 headerMenu.addEventListener("click", function () {
     headerNavMenu.classList.toggle("active")
     navMenuSpan.classList.toggle("active")
@@ -80,8 +86,13 @@ var aboutInfo = document.querySelectorAll('.about__info');
 
 
 window.addEventListener("scroll", function () {
+    scrollcards()
+    scrollthings()
+    scrollteamwork()
+    scrollabout() 
+})
 
-
+function scrollcards() {
     for (let i = 0; i < cards.length; i++) {
         if (this.scrollY >= cards[i].offsetTop + cards[i].offsetHeight * 2) {
             const speed = +cards[i].getAttribute("data-speed")
@@ -92,6 +103,9 @@ window.addEventListener("scroll", function () {
 
         }
     }
+}
+
+function scrollthings() {
     if (this.scrollY >= thingsContent.offsetTop + thingsContent.offsetHeight * 2.7) {
 
         thingsImg.classList.add("active")
@@ -105,36 +119,53 @@ window.addEventListener("scroll", function () {
         });
 
     }
+}
+
+function scrollteamwork() {
     if (this.scrollY >= teamworkContent.offsetTop + teamworkContent.offsetHeight * 3.1) {
         teamWorkImg.classList.add("active")
         teamWorkInfo.forEach(e => {
             e.classList.add("active")
 
         })
-    }
-    else {
+    } else {
         teamWorkImg.classList.remove("active")
         teamWorkInfo.forEach(e => {
             e.classList.remove("active")
 
         })
-        
+
     }
-    
-    if (this.scrollY >= aboutContent.offsetTop + aboutContent.offsetHeight * 5 ) {
+}
+
+function scrollabout() {
+    if (this.scrollY >= aboutContent.offsetTop + aboutContent.offsetHeight * 5) {
         aboutImg.classList.add("active")
         aboutInfo.forEach(e => {
             e.classList.add("active")
 
         })
-    }
-    else {
+    } else {
         aboutImg.classList.remove("active")
         aboutInfo.forEach(e => {
             e.classList.remove("active")
 
         })
-        
+
     }
+}
+
+
+
+
+btn.forEach(btns => {
+
+    btns.addEventListener("mousemove", function (e) {
+        const X = e.pageX - this.offsetLeft
+        const Y = e.pageY - this.offsetTop
+
+        this.style.setProperty("--x", `${X}px`)
+        this.style.setProperty("--y", `${Y}px`)
+    })
 
 })
