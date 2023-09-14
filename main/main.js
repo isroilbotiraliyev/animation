@@ -67,12 +67,11 @@ var navMenuSpan2 = document.querySelector('.nav__menu-span2');
 var btn = document.querySelectorAll('.btn');
 headerMenu.addEventListener("click", function () {
     headerNavMenu.classList.toggle("active")
-    navMenuSpan.classList.toggle("active")
-    navMenuSpan2.classList.toggle("active")
+    headerMenu.classList.toggle('active')
 })
 
 
-var cards = document.querySelectorAll('.services__items-card');
+var cards = document.querySelectorAll('.services__cards-card');
 var thingsContent = document.querySelector('.things__content');
 var thingsImg = document.querySelector('.things__img');
 var thingsInfo = document.querySelectorAll('.things__info');
