@@ -368,6 +368,15 @@
   .footer__content-item {
     padding-left: 45px;
   }
+  .header__info-button {
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+  }
+  .arrow-span {
+    top: 25%;
+    left: 70%;
+  }
    
 }
 
