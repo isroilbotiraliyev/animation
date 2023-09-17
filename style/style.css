@@ -669,6 +669,10 @@ ul {
     
 }
 
+.brands__card.active:hover {
+    transform: scale(1.2);
+}
+
 .brands__card.active {
     opacity: 1;
     transform: translate3d(0, 0, 0);
